@@ -7,15 +7,38 @@
       <h2>UAH international cross-rate</h2>
       <div class="rates__items">
         <div class="rates__item">
-          USD: {{usdIndex}}
+          USD: {{usdRate}}
         </div>
         <div class="rates__item">
-          EUR: {{eurIndex}}
+          EUR: {{eurRate}}
         </div>
       </div>
     </div>
   </div>
   <div class="converter">
-    converter
+    <div class="converter__items">
+      <div class="converter__item">
+        <h3>FROM</h3>
+        <div class="converter__item_inputs">
+          <input type="number" (input)="inputHandler1($event)">
+          <select name="currency" (input)="inputHandler2($event)">
+            <option value="UAH">UAH</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+      </div>
+      <div class="converter__item">
+        <h3>TO</h3>
+        <div class="converter__item_inputs">
+          <input type="number" (input)="inputHandler1($event)">
+          <select name="currency" (input)="inputHandler2($event)">
+            <option value="UAH">UAH</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
