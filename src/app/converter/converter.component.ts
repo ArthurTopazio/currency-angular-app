@@ -25,38 +25,62 @@ export class ConverterComponent implements OnInit {
 
   uahIndex = 0
 
-  methods = {
-    "USD": {
-      index: this.usdIndex,
-      result: 'this.convertFunc',
-    },
-    "UAH": {
-      index: this.uahIndex / this.usdIndex,
-      result: 'this.convertFunc',
-    },
-    "EUR": {
-      index: this.eurIndex / this.usdIndex,
-      result: 'ddscv'
-    },
-  }
-
-  // convertFunc = (metric1: any, val: any, metric2: any): any => (val * metr1 / metr2).toFixed(2)
   usdRate = 0
+
   eurRate = 0
-  imgUrl = 'https://d2v9ipibika81v.cloudfront.net/uploads/sites/67/20220113bemb1140x440.jpg'
+
+  imgUrl = 'https://currency-graphs.com/Images/Forex_Otzovik/610/270/1068088123-yaponskiy_svechi___udobnyy_instrument_valyutnogo_grafika.jpg'
 
   inputHandler1(event: any) {
-    console.log(event.target.value)
-    const val = event.target.value
+    this.input1 = event.target.value
+    let number = event.target.value
+    let firstIndex = this.currency1 == 'UAH' ? this.uahIndex : this.currency1 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    let secondIndex = this.currency2 == 'UAH' ? this.uahIndex : this.currency2 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    this.input2 = +(number * secondIndex / firstIndex).toFixed(2)
+  }
+
+  selectHandler1(event: any) {
+    this.currency1 = event.target.value
+    let number = this.input1
+    let firstIndex = this.currency1 == 'UAH' ? this.uahIndex : this.currency1 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    let secondIndex = this.currency2 == 'UAH' ? this.uahIndex : this.currency2 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    this.input2 = +(number * secondIndex / firstIndex).toFixed(2)
   }
 
   inputHandler2(event: any) {
-    console.log(event.target.value)
-    const val = event.target.value
+    this.input2 = event.target.value
+    let number = event.target.value
+    let firstIndex = this.currency1 == 'UAH' ? this.uahIndex : this.currency1 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    let secondIndex = this.currency2 == 'UAH' ? this.uahIndex : this.currency2 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    this.input1 = +(number * firstIndex / secondIndex).toFixed(2)
   }
 
+  selectHandler2(event: any) {
+    this.currency2 = event.target.value
+    let number = this.input2
+    let firstIndex = this.currency1 == 'UAH' ? this.uahIndex : this.currency1 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    let secondIndex = this.currency2 == 'UAH' ? this.uahIndex : this.currency2 == 'USD'
+      ? this.usdIndex : this.eurIndex
+    this.input1 = +(number * firstIndex / secondIndex).toFixed(2)
+  }
+
+  input1 = 0
+
+  currency1 = 'UAH'
+
+  input2 = 0
+
+  currency2 = 'UAH'
+
   ngOnInit(): void {
-    //  this.getCrossIndex()
+    this.getCrossIndex()
   }
 
 }

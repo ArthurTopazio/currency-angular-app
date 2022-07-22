@@ -20,8 +20,8 @@
       <div class="converter__item">
         <h3>FROM</h3>
         <div class="converter__item_inputs">
-          <input type="number" (input)="inputHandler1($event)">
-          <select name="currency" (input)="inputHandler2($event)">
+          <input type="number" [value]='input1' (input)="inputHandler1($event)">
+          <select name="currency" (input)="selectHandler1($event)">
             <option value="UAH">UAH</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -31,8 +31,8 @@
       <div class="converter__item">
         <h3>TO</h3>
         <div class="converter__item_inputs">
-          <input type="number" (input)="inputHandler1($event)">
-          <select name="currency" (input)="inputHandler2($event)">
+          <input type="number" [value]='input2' (input)="inputHandler2($event)">
+          <select name="currency" (input)="selectHandler2($event)">
             <option value="UAH">UAH</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
