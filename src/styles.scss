@@ -3,6 +3,22 @@
 
 html {
   font-family: 'Roboto', sans-serif;
+  
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: textfield;
+}
+
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
 }
 
 body {
