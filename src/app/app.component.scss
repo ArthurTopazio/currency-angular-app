@@ -1,10 +1,44 @@
-.container {
-  max-width: 800px;
+.wrapper {
+  max-width: 90%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding-top: 3rem;
-  background-color: gray;
-}
+  background-color: rgb(222, 222, 222);
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+  }
 
-h1 {
+.header {
+  width: 100%;
+  height: 38px;
+  background-color: #007941;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
 }
+
+.label__item {
+  width: 40px;
+  margin-left: 15px;
+}
+
+.nav__bar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.nav__bar ul li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.nav__bar ul li:hover {
+  color: #53a17d;
+}
+
+
+

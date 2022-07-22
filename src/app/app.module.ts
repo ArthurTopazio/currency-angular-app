@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
-import { FormComponent } from './form/form.component';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    FormComponent,
+    ConverterComponent,
   ],
   imports: [
     BrowserModule
